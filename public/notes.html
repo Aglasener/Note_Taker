@@ -17,7 +17,7 @@
     <a class="navbar-brand" href="/">Note Taker
     </a>
     <div class="icons">
-      <i class="fas fa-save text-light save-note"></i>
+      <i class = "fas fa-save text-light save-note"></i>
       <i class="fas fa-pen text-light new-note"></i>
     </div>
   </nav>
@@ -38,5 +38,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
 </body>
+
+<script type="text/javascript">
+//   // This button click will save the note
+//   $("#save-note").on("click", function(event) {
+//     event.preventDefault();
+//     var newNote = {
+//       title: $(".note-title").val().trim(),
+//       body: $("note-textarea").val().trim()
+//     };
+
+//     $.post("/api/notes", newNote)
+//       .then(function(data) {
+//         console.log("notes.html", data);
+//         alert("Saving Note...");
+//       });
+//   });
+
+// //This button click will create a new note
+// $("#new-note").on("click", function(event) {
+//     event.preventDefault();
+//     $(".note-title").empty();
+//     $("note-textarea").empty();
+// });    
+
+
+</script>
+
 
 </html>

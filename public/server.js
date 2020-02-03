@@ -2,15 +2,17 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
-var savedNotes = require("savedNotes");
+var savedNotes = require("../db/database");
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = 3000;
 
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use("/assets", express.static('./assets/'));
 
 //Basic HTML routes
 
@@ -42,14 +44,16 @@ app.post("/api/notes", function(req, res) {
 });
 
 app.delete("api/notes/:id", function(req, res) {
-  var deleteNote = req.params.savedNotes;
+  var deleteNote = req.params.id;
 
   console.log(deleteNote);
 
   for (var i = 0; i <savedNotes.length; i++){
     if(deleteNote === savedNotes[i].id){
-      res.delete(savedNotes[i]);
+      delete savedNotes[i];
       return res.json(savedNotes);
+
+      
     }
   }
 
