@@ -10,7 +10,7 @@ const readFileAsync = util.promisify(fs.readFile);
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 3000;
+app.set('port', process.env.PORT || 8080);
 
 
 // var test = '{"id": 0,"title": "test", "text": "testbody"}';
